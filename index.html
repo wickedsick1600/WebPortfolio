@@ -160,6 +160,32 @@
 
                 <div class="project-card">
                     <div class="project-header">
+                        <h3><i class="fas fa-toolbox"></i> Juankit</h3>
+                        <p>Free browser tools suite — PDF, images, code, text, media, and AI utilities</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Privacy-first collection of 19+ web utilities at juankit.com. No signup, no tracking — most tools process files entirely in the browser. Features a searchable hub with categorized tools, shared design system, and a serverless AI backend for the Prompt Enhancer.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Netlify</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Web APIs</span>
+                        </div>
+                        <div class="project-links">
+                            <button class="preview-button" onclick="openModal('juankitModal')">
+                                <i class="fas fa-eye"></i> View Functionalities
+                            </button>
+                            <a href="https://juankit.com/" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live Website
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
                         <h3><i class="fas fa-pills"></i> Pharmaceutical Inventory Management</h3>
                         <p>Private inventory system with comprehensive order and stock management</p>
                     </div>
@@ -270,6 +296,134 @@
         </div>
     </section>
 
+    <div id="juankitModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-toolbox"></i> Juankit — Browser Tools Suite</h3>
+            <span class="close" onclick="closeModal('juankitModal')">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="preview-grid">
+                <div class="preview-item">
+                    <div class="preview-image">
+                        <img src="images/juankit/hub.png" alt="Juankit tool hub with search and category filters">
+                    </div>
+                    <div class="preview-caption">
+                        <h4>Searchable Tool Hub</h4>
+                        <p>Central catalog with live search, category tabs, featured shortcuts, FAQ, and feedback form</p>
+                    </div>
+                </div>
+                <div class="preview-item">
+                    <div class="preview-image">
+                        <img src="images/juankit/pdf-editor.png" alt="Juankit PDF Editor tool page">
+                    </div>
+                    <div class="preview-caption">
+                        <h4>PDF Tools</h4>
+                        <p>Annotate and sign PDFs, convert pages to images, and merge multiple PDFs — all in-browser</p>
+                    </div>
+                </div>
+                <div class="preview-item">
+                    <div class="preview-image">
+                        <img src="images/juankit/image-editor.png" alt="Juankit Image Editor tool page">
+                    </div>
+                    <div class="preview-caption">
+                        <h4>Image Tools</h4>
+                        <p>Full image editor, bulk resizer with ZIP export, and SVG optimizer with metadata stripping</p>
+                    </div>
+                </div>
+                <div class="preview-item">
+                    <div class="preview-image">
+                        <img src="images/juankit/json-formatter.png" alt="Juankit JSON Formatter tool page">
+                    </div>
+                    <div class="preview-caption">
+                        <h4>Developer Utilities</h4>
+                        <p>JSON formatter, regex tester, diff checker, unit converter, folder scaffold ZIP generator, and QR codes</p>
+                    </div>
+                </div>
+                <div class="preview-item">
+                    <div class="preview-image">
+                        <img src="images/juankit/prompt-enhancer.png" alt="Juankit Prompt Enhancer tool page">
+                    </div>
+                    <div class="preview-caption">
+                        <h4>Prompt Enhancer</h4>
+                        <p>Rewrite prompts for ChatGPT, Claude, Midjourney, and more via secure serverless AI backend</p>
+                    </div>
+                </div>
+                <div class="preview-item">
+                    <div class="preview-image">
+                        <img src="images/juankit/password-generator.png" alt="Juankit Password Generator showing browser-only processing">
+                    </div>
+                    <div class="preview-caption">
+                        <h4>Privacy-First Design</h4>
+                        <p>No accounts, no analytics, no trackers — files stay on the user's device wherever possible</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-list">
+                <h4>All Live Tools (19)</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    <ul>
+                        <li>Image Editor</li>
+                        <li>Folder Creator</li>
+                        <li>Prompt Enhancer</li>
+                        <li>YouTube Replay</li>
+                        <li>Audio Trimmer</li>
+                        <li>QR Code Generator</li>
+                        <li>Fake User Generator</li>
+                    </ul>
+                    <ul>
+                        <li>Password Generator</li>
+                        <li>Stopwatch with Splits</li>
+                        <li>Bulk Image Resizer</li>
+                        <li>Pseudo Word Generator</li>
+                        <li>JSON Formatter</li>
+                        <li>Regex Tester</li>
+                        <li>Diff Checker</li>
+                    </ul>
+                    <ul>
+                        <li>Web Dev Unit Converter</li>
+                        <li>SVG Optimizer</li>
+                        <li>PDF Editor</li>
+                        <li>PDF to Images</li>
+                        <li>PDF Merger</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 10px; margin-top: 2rem;">
+                <h4 style="margin-bottom: 1rem;"><i class="fas fa-code"></i> Technical Implementation</h4>
+                <p style="margin-bottom: 1rem;">Static-first monorepo deployed on Netlify with a central tool registry, shared footer sync build pipeline, and optional serverless functions for AI endpoints.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div>
+                        <strong>Frontend:</strong><br>
+                        Plain HTML, CSS, JavaScript<br>
+                        Fabric.js, pdf.js, pdf-lib<br>
+                        No framework or bundler
+                    </div>
+                    <div>
+                        <strong>Backend:</strong><br>
+                        Netlify serverless functions<br>
+                        OpenAI-compatible API<br>
+                        Rate limiting & Turnstile
+                    </div>
+                    <div>
+                        <strong>Hosting:</strong><br>
+                        Netlify static deploy<br>
+                        CSP & HSTS headers<br>
+                        SEO (sitemap, JSON-LD)
+                    </div>
+                    <div>
+                        <strong>Architecture:</strong><br>
+                        Central tools.js registry<br>
+                        Footer sync build step<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <div id="pharmaModal" class="modal">
     <div class="modal-content">
         <div class="modal-header">
@@ -361,7 +515,7 @@
                         <strong>Frontend:</strong><br>
                         React<br>
                         Bootstrap<br>
-                        Redux for state management
+                        Redux
                     </div>
                     <div>
                         <strong>Backend:</strong><br>
