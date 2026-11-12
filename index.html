@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jose Mari Jayson Cayabyab - Web Developer</title>
+    <meta name="description" content="Portfolio of Jose Mari Jayson Cayabyab, a Shopify Web Developer - Manager specializing in Shopify Plus, Liquid, checkout extensions, and e-commerce integrations.">
+    <title>Jose Mari Jayson Cayabyab | Shopify Web Developer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="floating-shapes">
         <div class="shape"></div>
         <div class="shape"></div>
@@ -15,95 +17,250 @@
         
     </div>
 
-    <header>
-        <nav class="container">
+    <header id="site-header">
+        <nav class="container" aria-label="Primary navigation">
             <div class="logo"><a href="#home">JMC</a></div>
-            <ul class="nav-links">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+            </button>
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#education">Education</a></li>
             </ul>
         </nav>
     </header>
 
+    <main id="main-content">
     <section id="home" class="hero">
-        <div class="container">
+        <div class="container hero-layout">
             <div class="hero-content">
+                <p class="eyebrow"><span></span> Shopify Plus · E-commerce · Integrations</p>
                 <h1>Jose Mari Jayson Cayabyab</h1>
-                <h2>Shopify Web Developer</h2>
-                <p>Transforming ideas into scalable web solutions with C#.NET, PHP, Vue, React, and Azure. From hospitality management to software engineering - bringing a unique perspective to every project.</p>
-                <a href="#projects" class="cta-button">View My Works</a>
+                <h2>Shopify Web Developer - Manager</h2>
+                <p>Building and managing Shopify Plus experiences through custom Liquid development, checkout extensions, integrations, and scalable storefront solutions.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="button button-primary">View my work <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="#experience" class="button button-secondary">My experience</a>
+                </div>
+                <ul class="hero-specialties" aria-label="Core specialties">
+                    <li>Custom Liquid</li>
+                    <li>Checkout Extensions</li>
+                    <li>Storefront Ownership</li>
+                </ul>
+            </div>
+            <div class="hero-visual" aria-label="Profile">
+                <div class="portrait-frame">
+                    <img src="images/display-pic.jpg" alt="Jose Mari Jayson Cayabyab">
+                </div>
+                <div class="current-role-card">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <div>
+                        <span>Currently at</span>
+                        <strong>Maxicare Healthcare Corporation</strong>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="about" class="section">
         <div class="container">
-            <h2>About Me</h2>
+            <div class="section-heading">
+                <p class="section-kicker">About me</p>
+                <h2>Business-minded development, built around people.</h2>
+            </div>
             <div class="about-grid">
-                <div class="about-image">
-                    <div class="profile-card">
-                        <img id="display-picture" src="images/display-pic.jpg">
-                        <h3>Jose Mari Jayson Cayabyab</h3>
-                        <p><i class="fas fa-code"></i> Shopify Web Developer</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Philippines</p>
-                        <div class="contact-info">
-                            <div><i class="fas fa-phone"></i> 0920-501-4306</div>
-                            <div><i class="fas fa-envelope"></i> Cayabyab.josemari@gmail.com</div>
-                            <div><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/josecayabyab" style="color: white;">LinkedIn Profile</a></div>
-                        </div>
-                    </div>
-                </div>
                 <div class="about-text">
                     <h3>From Hospitality to Code</h3>
                     <p>I'm a results-driven Web Developer with a unique background in hospitality management. My journey from customer service excellence to software development has given me a distinctive perspective on creating user-centered solutions.</p>
-                    <p>Currently working at Baytech BPO, where I serve as lead and sole developer on a live Shopify Plus store—maintaining the site, shipping new features, UI changes, and backend integrations on an existing codebase. My experience also spans other e-commerce platforms and enterprise inventory systems, always focusing on delivering business value through clean, efficient code.</p>
-                    <p>What sets me apart is my ability to translate business needs into technical solutions, backed by strong communication skills developed during my hospitality career and reinforced by my Cum Laude academic achievement.</p>
-                    
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4><i class="fas fa-code"></i> Programming Languages</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">C#</span>
-                                <span class="skill-tag">PHP</span>
-                                <span class="skill-tag">JavaScript (ES6+)</span>
-                                <span class="skill-tag">HTML5</span>
-                                <span class="skill-tag">CSS3</span>
-                                <span class="skill-tag">Shopify Liquid</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4><i class="fas fa-layer-group"></i> Frameworks & Tools</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Shopify Plus</span>
-                                <span class="skill-tag">ASP.NET</span>
-                                <span class="skill-tag">React</span>
-                                <span class="skill-tag">Vue</span>
-                                <span class="skill-tag">.NET</span>
-                                <span class="skill-tag">Azure</span>
-                                <span class="skill-tag">Git</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4><i class="fas fa-database"></i> Database & Cloud</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">MySQL</span>
-                                <span class="skill-tag">SQL Server</span>
-                                <span class="skill-tag">Azure DevOps</span>
-                                <span class="skill-tag">CI/CD</span>
-                            </div>
-                        </div>
+                    <p>Currently working at Maxicare Healthcare Corporation as a Shopify Web Developer - Manager. I contributed to the initial team launch of its Shopify Plus storefront and now solely handle the site, including custom sections, Liquid theme development, checkout extensions, custom pages, Shopify admin operations, new features, and integrations.</p>
+                    <p>Across Maxicare, Baytech BPO, and WeePay Payment Processing Corporation, I translate business needs into reliable e-commerce and enterprise solutions with clear communication and maintainable code.</p>
+                </div>
+                <aside class="about-panel" aria-label="Current focus and contact details">
+                    <p class="about-panel-label">Current focus</p>
+                    <h3>Owning and evolving a live Shopify Plus storefront.</h3>
+                    <ul class="focus-list">
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Theme and custom section development</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Checkout validation and extensions</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Payments, analytics, and integrations</li>
+                    </ul>
+                    <div class="contact-list">
+                        <a href="mailto:Cayabyab.josemari@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> Email me</a>
+                        <a href="https://www.linkedin.com/in/josecayabyab" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+                        <a href="tel:+639205014306"><i class="fas fa-phone" aria-hidden="true"></i> 0920-501-4306</a>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4><i class="fas fa-code" aria-hidden="true"></i> Languages</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">JavaScript (ES6+)</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">Shopify Liquid</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4><i class="fas fa-layer-group" aria-hidden="true"></i> Platforms & Tools</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Shopify Plus</span>
+                        <span class="skill-tag">Checkout Extensions</span>
+                        <span class="skill-tag">Shopify CLI</span>
+                        <span class="skill-tag">ASP.NET</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Vue</span>
+                        <span class="skill-tag">.NET</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Bitbucket</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4><i class="fas fa-database" aria-hidden="true"></i> Data, Cloud & Integrations</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Azure DevOps</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">PayMongo</span>
+                        <span class="skill-tag">Insider One</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="experience" class="section experience-section">
+        <div class="container">
+            <div class="section-heading">
+                <p class="section-kicker">Career</p>
+                <h2>Professional Experience</h2>
+                <p>A career progression from customer relations to software engineering and full Shopify Plus storefront ownership.</p>
+            </div>
+            <div class="experience-timeline">
+                <article class="experience-card current-role">
+                    <div class="experience-marker" aria-hidden="true"></div>
+                    <div class="experience-heading">
+                        <div>
+                            <h3>Shopify Web Developer - Manager</h3>
+                            <h4>Maxicare Healthcare Corporation</h4>
+                        </div>
+                        <span class="experience-date">Aug 2026 - Present</span>
+                    </div>
+                    <p>Contributed to the initial team launch of the company's Shopify Plus storefront and now serve as its sole developer, delivering custom sections, Liquid theme development, checkout validation, custom pages, admin management, maintenance, and future features and integrations.</p>
+                    <div class="experience-highlights">
+                        <span>Shopify Plus</span>
+                        <span>Liquid</span>
+                        <span>Checkout Extensions</span>
+                        <span>PayMongo</span>
+                        <span>Insider One</span>
+                    </div>
+                </article>
+
+                <article class="experience-card">
+                    <div class="experience-marker" aria-hidden="true"></div>
+                    <div class="experience-heading">
+                        <div>
+                            <h3>Shopify Web Developer</h3>
+                            <h4>Baytech BPO</h4>
+                        </div>
+                        <span class="experience-date">Oct 2025 - Aug 2026</span>
+                    </div>
+                    <p>Led and solely handled development for a live international Shopify Plus fashion store, maintaining its theme codebase while delivering custom sections, Liquid templates, UI improvements, and backend integrations.</p>
+                    <div class="experience-highlights">
+                        <span>Shopify Plus</span>
+                        <span>Liquid</span>
+                        <span>JavaScript</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                    </div>
+                </article>
+
+                <article class="experience-card">
+                    <div class="experience-marker" aria-hidden="true"></div>
+                    <div class="experience-heading">
+                        <div>
+                            <h3>Software Engineer</h3>
+                            <h4>WeePay Payment Processing Corporation</h4>
+                        </div>
+                        <span class="experience-date">Oct 2024 - Oct 2025</span>
+                    </div>
+                    <p>Worked on the Pet Kingdom e-commerce platform and a pharmaceutical inventory management system, contributing to customer-facing commerce and internal business operations software.</p>
+                    <div class="experience-highlights">
+                        <span>Shopify</span>
+                        <span>React</span>
+                        <span>C# .NET Core</span>
+                        <span>SQL Server</span>
+                        <span>Azure DevOps</span>
+                    </div>
+                </article>
+
+                <article class="experience-card">
+                    <div class="experience-marker" aria-hidden="true"></div>
+                    <div class="experience-heading">
+                        <div>
+                            <h3>Customer Relations Ambassador</h3>
+                            <h4>Robinsons Land Corporation - Residences</h4>
+                        </div>
+                        <span class="experience-date">Oct 2022 - Oct 2024</span>
+                    </div>
+                    <p>Supported residents through customer service, coordinated internal communications, and prepared Excel reports before transitioning into software engineering.</p>
+                    <div class="experience-highlights">
+                        <span>Customer Relations</span>
+                        <span>Excel Reporting</span>
+                        <span>Salesforce</span>
+                        <span>Internal Coordination</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <section id="projects" class="section">
         <div class="container">
-            <h2>Featured Projects</h2>
+            <div class="section-heading">
+                <p class="section-kicker">Selected work</p>
+                <h2>Featured Projects</h2>
+                <p>Commerce platforms, business systems, and practical tools built for real users.</p>
+            </div>
             <div class="projects-grid">
+
+                <div class="project-card featured-project">
+                    <div class="project-header">
+                        <h3><i class="fas fa-heartbeat"></i> Maxicare Healthcare E-commerce Platform</h3>
+                        <p>Shopify Plus storefront for exploring, comparing, and purchasing prepaid healthcare plans</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Helped launch and now solely maintain the live storefront, delivering custom Liquid sections, checkout validation, admin operations, and new integrations.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Shopify Plus</span>
+                            <span class="tech-tag">Liquid</span>
+                            <span class="tech-tag">Checkout Extensions</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">Shopify CLI</span>
+                            <span class="tech-tag">PayMongo</span>
+                            <span class="tech-tag">Insider One</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">Bitbucket</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://shop.maxicare.com.ph/" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live Website
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="project-card">
                     <div class="project-header">
@@ -111,9 +268,7 @@
                          <p>Dubai-based Shopify Plus fashion store with international selling and Arabic storefront</p>
                     </div>
                     <div class="project-content">
-                         <p>
-                            Lead and sole developer maintaining and extending this live Shopify Plus store. I ship custom sections, Liquid templates, UI updates, and backend API work—building on a theme codebase.
-                        </p>
+                         <p>Sole developer for a live international Shopify Plus fashion store, delivering Liquid templates, custom sections, UI improvements, and backend integrations.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">Shopify Plus</span>
                             <span class="tech-tag">Shopify</span>
@@ -142,7 +297,7 @@
                         <p>Full-featured Shopify e-commerce solution for pet services and products</p>
                     </div>
                     <div class="project-content">
-                        <p>Comprehensive pet care platform offering grooming services, veterinary care, and pet cafe experiences. Features a complete e-commerce system for pet food, accessories, and supplies for various pets including exotic animals.</p>
+                        <p>Shopify platform combining pet products with grooming, veterinary care, and pet cafe services in one customer experience.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">Shopify</span>
                             <span class="tech-tag">Liquid</span>
@@ -164,7 +319,7 @@
                         <p>Free browser tools suite — PDF, images, code, text, media, and AI utilities</p>
                     </div>
                     <div class="project-content">
-                        <p>Privacy-first collection of 19+ web utilities at juankit.com. No signup, no tracking — most tools process files entirely in the browser. Features a searchable hub with categorized tools, shared design system, and a serverless AI backend for the Prompt Enhancer.</p>
+                        <p>Privacy-first suite of 19+ browser utilities with searchable categories, a shared design system, and a serverless AI prompt enhancer.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">HTML5</span>
@@ -190,7 +345,7 @@
                         <p>Private inventory system with comprehensive order and stock management</p>
                     </div>
                     <div class="project-content">
-                        <p>Enterprise-level inventory management system enabling users to create orders, manage inventory, receive and record goods, handle customer profiles, convert stocks, and upload orders with automated workflows.</p>
+                        <p>Enterprise inventory system for orders, stock, receiving, customer records, conversions, and automated bulk uploads.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">C# .NET Core</span>
@@ -215,7 +370,7 @@
                         <p>Productivity web application for task and shopping list management</p>
                     </div>
                     <div class="project-content">
-                        <p>Clean and intuitive planning application where users can organize their daily tasks and manage shopping lists efficiently. Features a responsive design with real-time updates and data persistence.</p>
+                        <p>Responsive task and shopping-list planner with real-time updates and persistent data.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">HTML5</span>
@@ -233,10 +388,10 @@
                 <div class="project-card">
                     <div class="project-header">
                         <h3><i class="fa-solid fa-globe"></i> Old Web Portfolio </h3>
-                        <p>Productivity web application for task and shopping list management</p>
+                        <p>Earlier personal portfolio that marked the start of my software engineering career</p>
                     </div>
                     <div class="project-content">
-                        <p>My old portfolio website that helped me land my first role as a software engineer</p>
+                        <p>The original portfolio that helped me land my first software engineering role.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">HTML5</span>
@@ -257,7 +412,7 @@
                         <p>Collection of fundamental programming projects</p>
                     </div>
                     <div class="project-content">
-                        <p>Various console applications demonstrating core programming concepts and problem-solving skills. Projects include a calculator app, tic-tac-toe game, string converter utility, and number guessing game - all built to strengthen algorithmic thinking and C# proficiency.</p>
+                        <p>A collection of calculator, tic-tac-toe, string conversion, and number-guessing projects demonstrating C# fundamentals and algorithmic thinking.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">C#</span>
                             <span class="tech-tag">.NET</span>
@@ -277,30 +432,43 @@
 
     <section id="education" class="section">
         <div class="container">
-            <h2>Education & Certifications</h2>
-            <div class="education-card">
-                <h3>BS in Hospitality Management</h3>
-                <h4>San Sebastian College - Recoletos, Manila</h4>
-                <p><i class="fas fa-calendar"></i> 2018 - 2022</p>
-                <span class="honor"><i class="fas fa-medal"></i> Graduated Cum Laude</span>
-                
-                <div style="margin-top: 2rem;">
-                    <h4 style="color: #264bf3; margin-bottom: 1rem;"><i class="fas fa-certificate"></i> Recent Certifications</h4>
-                    <ul style="color: #4a5568; line-height: 2;">
+            <div class="section-heading">
+                <p class="section-kicker">Foundation</p>
+                <h2>Education & Certifications</h2>
+            </div>
+            <div class="education-grid">
+                <article class="education-card">
+                    <div class="education-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+                    <div>
+                        <p class="education-label">Degree</p>
+                        <h3>BS in Hospitality Management</h3>
+                        <h4>San Sebastian College - Recoletos, Manila</h4>
+                        <p class="education-date"><i class="fas fa-calendar" aria-hidden="true"></i> 2018 - 2022</p>
+                        <span class="honor"><i class="fas fa-medal" aria-hidden="true"></i> Graduated Cum Laude</span>
+                    </div>
+                </article>
+                <article class="certification-card">
+                    <div class="education-icon"><i class="fas fa-certificate" aria-hidden="true"></i></div>
+                    <div>
+                        <p class="education-label">Continued learning</p>
+                        <h3>Recent Certifications</h3>
+                        <ul>
                         <li>HarvardX CS50x: Introduction to Computer Science (2024)</li>
                         <li>IBM: Databases and SQL for Data Science (2024)</li>
                         <li>Microsoft Excel Training (2024)</li>
-                    </ul>
-                </div>
+                        </ul>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
+    </main>
 
-    <div id="juankitModal" class="modal">
-    <div class="modal-content">
+    <div id="juankitModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="juankitModalTitle" aria-hidden="true">
+    <div class="modal-content" tabindex="-1">
         <div class="modal-header">
-            <h3><i class="fas fa-toolbox"></i> Juankit — Browser Tools Suite</h3>
-            <span class="close" onclick="closeModal('juankitModal')">&times;</span>
+            <h3 id="juankitModalTitle"><i class="fas fa-toolbox"></i> Juankit — Browser Tools Suite</h3>
+            <button class="close" type="button" onclick="closeModal('juankitModal')" aria-label="Close Juankit details">&times;</button>
         </div>
         <div class="modal-body">
             <div class="preview-grid">
@@ -362,7 +530,7 @@
 
             <div class="feature-list">
                 <h4>All Live Tools (19)</h4>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <div class="feature-columns">
                     <ul>
                         <li>Image Editor</li>
                         <li>Folder Creator</li>
@@ -391,10 +559,10 @@
                 </div>
             </div>
 
-            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 10px; margin-top: 2rem;">
-                <h4 style="margin-bottom: 1rem;"><i class="fas fa-code"></i> Technical Implementation</h4>
-                <p style="margin-bottom: 1rem;">Static-first monorepo deployed on Netlify with a central tool registry, shared footer sync build pipeline, and optional serverless functions for AI endpoints.</p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            <div class="technical-panel">
+                <h4><i class="fas fa-code"></i> Technical Implementation</h4>
+                <p>Static-first monorepo deployed on Netlify with a central tool registry, shared footer sync build pipeline, and optional serverless functions for AI endpoints.</p>
+                <div class="technical-grid">
                     <div>
                         <strong>Frontend:</strong><br>
                         Plain HTML, CSS, JavaScript<br>
@@ -424,11 +592,11 @@
     </div>
 </div>
 
-    <div id="pharmaModal" class="modal">
-    <div class="modal-content">
+    <div id="pharmaModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="pharmaModalTitle" aria-hidden="true">
+    <div class="modal-content" tabindex="-1">
         <div class="modal-header">
-            <h3><i class="fas fa-pills"></i> Pharmaceutical Inventory Management System</h3>
-            <span class="close" onclick="closeModal('pharmaModal')">&times;</span>
+            <h3 id="pharmaModalTitle"><i class="fas fa-pills"></i> Pharmaceutical Inventory Management System</h3>
+            <button class="close" type="button" onclick="closeModal('pharmaModal')" aria-label="Close pharmaceutical system details">&times;</button>
         </div>
         <div class="modal-body">
             <div class="preview-grid">
@@ -490,7 +658,7 @@
             
             <div class="feature-list">
                 <h4>Key Features & Capabilities</h4>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <div class="feature-columns">
                     <ul>
                         <li>Real-time inventory tracking</li>
                         <li>Batch and expiration management</li>
@@ -507,10 +675,10 @@
                 </div>
             </div>
 
-            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 10px; margin-top: 2rem;">
-                <h4 style="margin-bottom: 1rem;"><i class="fas fa-code"></i> Technical Implementation</h4>
-                <p style="margin-bottom: 1rem;">Built with modern enterprise technologies following best practices for scalability and maintainability.</p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            <div class="technical-panel">
+                <h4><i class="fas fa-code"></i> Technical Implementation</h4>
+                <p>Built with modern enterprise technologies following best practices for scalability and maintainability.</p>
+                <div class="technical-grid">
                     <div>
                         <strong>Frontend:</strong><br>
                         React<br>
@@ -542,14 +710,23 @@
 </div>
 
     <footer id="contact">
-        <div class="container">
-            <div class="social-links">
-                <a href="mailto:Cayabyab.josemari@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/josecayabyab" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#about"><i class="fas fa-phone"></i></a>
+        <div class="container footer-content">
+            <div class="footer-intro">
+                <a class="footer-logo" href="#home">JMC</a>
+                <h2>Let's build something useful.</h2>
+                <p>Shopify, e-commerce, and web development.</p>
             </div>
-            <p>&copy; 2026 Jose Mari Jayson Cayabyab. All rights reserved.</p>
-            <p style="margin-top: 1rem; opacity: 0.7;">Let's build something amazing together!</p>
+            <div class="footer-contact">
+                <p>Get in touch</p>
+                <a href="mailto:Cayabyab.josemari@gmail.com">Cayabyab.josemari@gmail.com</a>
+                <a href="tel:+639205014306">0920-501-4306</a>
+                <div class="social-links">
+                    <a href="mailto:Cayabyab.josemari@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/josecayabyab" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://github.com/wickedsick1600" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <p class="footer-bottom">&copy; 2026 Jose Mari Jayson Cayabyab. All rights reserved.</p>
         </div>
     </footer>
 

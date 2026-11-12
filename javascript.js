@@ -1,79 +1,143 @@
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+'use strict';
+
+const header = document.querySelector('#site-header');
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+const internalLinks = document.querySelectorAll('a[href^="#"]');
+let lastFocusedElement = null;
+
+function closeNavigation() {
+    if (!navToggle || !navLinks) return;
+
+    navToggle.setAttribute('aria-expanded', 'false');
+    navLinks.classList.remove('is-open');
+    document.body.classList.remove('nav-open');
+}
+
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!isOpen));
+        navLinks.classList.toggle('is-open', !isOpen);
+        document.body.classList.toggle('nav-open', !isOpen);
     });
 
-    // Add scroll effect to header
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        if (window.scrollY > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.98)';
-        } else {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
+    document.addEventListener('click', (event) => {
+        if (!navLinks.classList.contains('is-open')) return;
+        if (navLinks.contains(event.target) || navToggle.contains(event.target)) return;
+        closeNavigation();
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 820) closeNavigation();
+    });
+}
+
+internalLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+        const href = link.getAttribute('href');
+
+        if (!href || href === '#') {
+            event.preventDefault();
+            return;
         }
+
+        const target = document.querySelector(href);
+        if (!target) return;
+
+        event.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        closeNavigation();
     });
+});
 
-    // Intersection Observer for animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+function updateHeader() {
+    if (!header) return;
+    header.classList.toggle('is-scrolled', window.scrollY > 24);
+}
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
+updateHeader();
+window.addEventListener('scroll', updateHeader, { passive: true });
+
+const pageSections = document.querySelectorAll('main section[id]');
+const navigationAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+if ('IntersectionObserver' in window) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            navigationAnchors.forEach((link) => {
+                link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`);
+            });
         });
-    }, observerOptions);
-
-    // Observe all sections for animation
-    document.querySelectorAll('.section').forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
-        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        observer.observe(section);
+    }, {
+        rootMargin: '-35% 0px -55% 0px',
+        threshold: 0
     });
 
-    function openModal(modalId) {
-    document.getElementById(modalId).style.display = 'block';
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    pageSections.forEach((section) => sectionObserver.observe(section));
 }
 
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
-    document.body.style.overflow = 'auto'; // Restore scrolling
+function setModalState(modal, isOpen) {
+    if (!modal) return;
+
+    modal.classList.toggle('is-open', isOpen);
+    modal.setAttribute('aria-hidden', String(!isOpen));
+    document.body.classList.toggle('modal-open', document.querySelector('.modal.is-open') !== null);
 }
 
-// Close modal when clicking outside of it
-window.addEventListener('click', function(event) {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+window.openModal = function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+
+    lastFocusedElement = document.activeElement;
+    setModalState(modal, true);
+    modal.querySelector('.modal-content')?.focus();
+};
+
+window.closeModal = function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+
+    setModalState(modal, false);
+    if (lastFocusedElement instanceof HTMLElement) lastFocusedElement.focus();
+};
+
+document.querySelectorAll('.modal').forEach((modal) => {
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) window.closeModal(modal.id);
+    });
+
+    modal.addEventListener('keydown', (event) => {
+        if (event.key !== 'Tab') return;
+
+        const focusableElements = modal.querySelectorAll(
+            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        if (!focusableElements.length) return;
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (event.shiftKey && document.activeElement === firstElement) {
+            event.preventDefault();
+            lastElement.focus();
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+            event.preventDefault();
+            firstElement.focus();
         }
     });
 });
 
-// Close modal with Escape key
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        const modals = document.querySelectorAll('.modal');
-        modals.forEach(modal => {
-            if (modal.style.display === 'block') {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
+document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+
+    const openModal = document.querySelector('.modal.is-open');
+    if (openModal) {
+        window.closeModal(openModal.id);
+        return;
     }
+
+    closeNavigation();
 });
